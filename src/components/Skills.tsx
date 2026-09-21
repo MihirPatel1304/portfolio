@@ -1,16 +1,42 @@
 const skillsData = {
-  languages: ["Python", "Java", "JavaScript", "HTML", "CSS", "SQL"],
-  databases: ["PostgreSQL", "MySQL"],
-  frameworks: ["Django"],
-  tools: ["Git", "GitHub", "Maven"],
+  languages: ["Python", "Java", "JavaScript", "TypeScript", "HTML", "CSS", "SQL"],
+  frameworks: ["React", "Next.js", "Spring Boot", "Django"],
+  databases: ["PostgreSQL", "MySQL", "SQLite"],
+  tools: ["Git", "GitHub", "Maven", "REST APIs", "OAuth"],
 };
+
+// Maps each skill to its icon file inside /public/icons
+const skillIcons: Record<string, string> = {
+  Python: "python.svg",
+  Java: "java.svg",
+  JavaScript: "javascript.svg",
+  TypeScript: "typescript.svg",
+  HTML: "html.svg",
+  CSS: "css.svg",
+  SQL: "sql.svg",
+  React: "react.svg",
+  "Next.js": "next-js.svg",
+  "Spring Boot": "spring-boot.svg",
+  Django: "django.svg",
+  PostgreSQL: "postgresql.svg",
+  MySQL: "mysql.svg",
+  SQLite: "sqlite.svg",
+  Git: "git.svg",
+  GitHub: "github-white.svg",
+  Maven: "maven.svg",
+  "REST APIs": "api.svg",
+  OAuth: "oauth.svg",
+};
+
+// These icons are black, so they are inverted to white on the dark background
+const darkIcons = new Set(["Next.js", "Spring Boot", "REST APIs", "OAuth"]);
 
 export default function Skills() {
   // Combine all skills into a single array to simplify rendering
   const allSkills = [
     ...skillsData.languages,
-    ...skillsData.databases,
     ...skillsData.frameworks,
+    ...skillsData.databases,
     ...skillsData.tools,
   ];
 
@@ -26,9 +52,9 @@ export default function Skills() {
 
         {/* Grid for each individual skill */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-          {allSkills.map((skill, index) => (
+          {allSkills.map((skill) => (
             <div
-              key={index}
+              key={skill}
               className="group bg-gray-900 p-4 rounded-lg flex items-center justify-center transform hover:scale-105 transition-transform duration-300 relative"
             >
               <div className="text-center">
@@ -45,133 +71,21 @@ export default function Skills() {
   );
 }
 
-// Helper function to return appropriate icon based on stack
-function getIconForStack(stack: unknown) {
-  switch (stack) {
-    case "Python":
-      return (
-        <img
-          src="../icons/python.svg"
-          alt="Python"
-          className="mx-auto"
-          style={{ width: "40px", height: "40px" }}
-        />
-      );
-    case "Java":
-      return (
-        <img
-          src="../icons/java.svg"
-          alt="Java"
-          className="mx-auto"
-          style={{ width: "40px", height: "40px" }}
-        />
-      );
-    case "JavaScript":
-      return (
-        <img
-          src="../icons/javascript.svg"
-          alt="JavaScript"
-          className="mx-auto"
-          style={{ width: "40px", height: "40px" }}
-        />
-      );
-    // case 'C':
-    //   return <img src="../icons/c++.svg" alt="C" className="mx-auto" style={{ width: '40px', height: '40px' }} />;
-    // case 'C++':
-    //   return <img src="../icons/c.svg" alt="C++" className="mx-auto" style={{ width: '40px', height: '40px' }} />;
-    case "HTML":
-      return (
-        <img
-          src="../icons/html.svg"
-          alt="HTML"
-          className="mx-auto"
-          style={{ width: "40px", height: "40px" }}
-        />
-      );
-    case "SQL":
-      return (
-        <img
-          src="../icons/sql.svg"
-          alt="SQL"
-          className="mx-auto"
-          style={{ width: "40px", height: "40px" }}
-        />
-      );
-    case "CSS":
-      return (
-        <img
-          src="/icons/css.svg"
-          alt="CSS"
-          className="mx-auto"
-          style={{ width: "40px", height: "40px" }}
-        />
-      );
-    case "React":
-      return (
-        <img
-          src="/icons/react.svg"
-          alt="React"
-          className="mx-auto"
-          style={{ width: "40px", height: "40px" }}
-        />
-      );
-    case "Django":
-      return (
-        <img
-          src="../icons/django.svg"
-          alt="Django"
-          className="mx-auto"
-          style={{ width: "40px", height: "40px" }}
-        />
-      );
-    case "PostgreSQL":
-      return (
-        <img
-          src="../icons/postgresql.svg"
-          alt="PostgreSQL"
-          className="mx-auto"
-          style={{ width: "40px", height: "40px" }}
-        />
-      );
-    case "MySQL":
-      return (
-        <img
-          src="../icons/mysql.svg"
-          alt="MySQL"
-          className="mx-auto"
-          style={{ width: "40px", height: "40px" }}
-        />
-      );
-    case "Git":
-      return (
-        <img
-          src="../icons/git.svg"
-          alt="Git"
-          className="mx-auto"
-          style={{ width: "40px", height: "40px" }}
-        />
-      );
-    // case 'Linux':
-    //   return <img src="./Public/icons/linux.svg" alt="Linux" className="mx-auto" style={{ width: '40px', height: '40px' }} />;
-    case "GitHub":
-      return (
-        <img
-          src="../icons/github-white.svg"
-          alt="GitHub"
-          className="mx-auto"
-          style={{ width: "40px", height: "40px" }}
-        />
-      );
-    case "Maven":
-      return (
-        <img
-          src="../icons/maven.svg"
-          alt="Maven"
-          className="mx-auto"
-          style={{ width: "40px", height: "40px" }}
-        />
-      );
-    default:
-      return <div className="w-10 h-10 bg-gray-500 mx-auto rounded-full" />;
+// Helper function to return the icon for a skill
+function getIconForStack(stack: string) {
+  const file = skillIcons[stack];
+
+  // Fallback circle if a skill has no icon yet
+  if (!file) {
+    return <div className="w-10 h-10 bg-gray-500 mx-auto rounded-full" />;
   }
+
+  return (
+    <img
+      src={`/icons/${file}`}
+      alt={stack}
+      className={`mx-auto ${darkIcons.has(stack) ? "invert" : ""}`}
+      style={{ width: "40px", height: "40px" }}
+    />
+  );
 }
