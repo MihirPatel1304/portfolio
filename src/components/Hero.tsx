@@ -51,7 +51,7 @@ export default function Hero() {
           >
             M.S. in Computer Science from DePaul University. I build web
             applications and REST APIs with React, Spring Boot, and Python, and
-            I'm exploring AI engineering. <br />
+            I'm exploring AI engineering.<br />
             Take a look at my projects, or get in touch.
           </motion.p>
 
