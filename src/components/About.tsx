@@ -55,19 +55,33 @@ export default function About() {
             variants={containerVariants}
           >
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">About Me</h2>
-            <p className="text-lg sm:text-xl text-gray-300 leading-relaxed text-justify">
-              Hi, I’m Mihir Patel, a passionate tech enthusiast and an aspiring
-              software engineer pursuing my Master’s in Computer Science at
-              DePaul University. With a strong foundation in programming and
-              growing expertise in languages like Python and Java, I thrive on
-              solving complex problems and creating meaningful solutions.
-              <br />
-              <br />
-              While my primary focus is on software engineering, I’m open to
-              exploring and contributing to other domains. As a quick learner, I
-              adapt seamlessly to new challenges and enjoy expanding my skill
-              set to deliver impactful results.
-            </p>
+            <div className="text-lg sm:text-xl text-gray-300 leading-relaxed text-justify space-y-4">
+              <p>
+                I'm a software engineer with a Master's in Computer Science from
+                DePaul University. I build full-stack web applications, from
+                React frontends to Java and Python backends, and I care about
+                clean APIs, secure authentication, and code that's easy to
+                maintain.
+              </p>
+              <p>
+                My experience includes a software engineering internship at Arth
+                Infosoft, a part-time software engineer role at Mangalam
+                Information Technologies, and a developer internship at PM
+                Communications, where I built and debugged Python, JavaScript,
+                and MySQL applications.
+              </p>
+              <p>
+                Recent projects include Personal Timeline, a full-stack app that
+                pulls in GitHub and Spotify activity through OAuth, and Hot
+                Properties, a Spring Boot real estate platform with JWT
+                authentication and role-based access. I'm also building with
+                LLMs, starting with a chatbot on the Anthropic API.
+              </p>
+              <p>
+                I'm looking for full-stack, backend, frontend, and AI
+                engineering roles, and I'd be glad to connect.
+              </p>
+            </div>
           </motion.div>
 
           {/* Image Container */}
@@ -76,7 +90,7 @@ export default function About() {
             variants={containerVariants}
           >
             <img
-              src="/icons/prof-pic.jpeg" 
+              src="/icons/prof-pic.jpeg"
               alt="Profile Picture"
               className="w-full h-full object-cover"
             />

@@ -28,7 +28,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
           >
-            Hello, I'm{" "}
+            Hi, I'm{" "}
             <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
               Mihir Patel
             </span>
@@ -40,7 +40,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
           >
-            Software Engineer
+            Full-Stack Software Engineer
           </motion.p>
 
           <motion.p
@@ -49,9 +49,10 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
           >
-            I'm currently a Computer Science graduate student at DePaul
-            University. <br />
-            Explore my projects and skills, and let’s connect!
+            M.S. in Computer Science from DePaul University. I build web
+            applications and REST APIs with React, Spring Boot, and Python, and
+            I'm exploring AI engineering. <br />
+            Take a look at my projects, or get in touch.
           </motion.p>
 
           <motion.div
@@ -77,13 +78,13 @@ export default function Hero() {
               <LinkedinIcon size={24} />
             </a>
             <a
-              href="mailto:mihir.patel130403@email.com"
+              href="mailto:mihir.patel130403@gmail.com"
               className="text-gray-400 hover:text-white transition-colors"
             >
               <MailIcon size={24} />
             </a>
             <a
-              href="/Resume_Mihir.pdf"
+              href="/Resume_Mihir_Patel.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"
