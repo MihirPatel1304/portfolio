@@ -43,17 +43,19 @@ export default function Hero() {
             Full-Stack Software Engineer
           </motion.p>
 
-          <motion.p
-            className="text-gray-400 max-w-2xl mx-auto mb-12 text-xl"
+          <motion.div
+            className="text-gray-400 max-w-3xl mx-auto mb-12 text-xl space-y-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
           >
-            M.S. in Computer Science from DePaul University. I build web
-            applications and REST APIs with React, Spring Boot, and Python, and
-            I'm exploring AI engineering.<br />
-            Take a look at my projects, or get in touch.
-          </motion.p>
+            <p className="text-balance">
+              M.S. in Computer Science from DePaul University. I build web applications
+              and REST APIs with React, Spring Boot, and Python, and I'm exploring AI
+              engineering.
+            </p>
+            <p>Take a look at my projects, or get in touch.</p>
+          </motion.div>
 
           <motion.div
             className="flex justify-center space-x-6"
