@@ -48,6 +48,20 @@ const projectsData = [
     live: null,
   },
   {
+  title: "AI Chatbot – Terminal Application",
+  description:
+    "A command-line chatbot built with Python and the Anthropic API. Keeps the full conversation history in memory so the model can refer back to earlier messages, and includes error handling and secure API key loading from environment variables.",
+  techStack: [
+    "Python",
+    "Anthropic API",
+    "python-dotenv",
+    "LLM",
+  ],
+  github: "https://github.com/MihirPatel1304/ai-chatbot",
+  image: "/icons/ai-chatbot.jpeg",
+  live: null,
+  },
+  {
     title:
       "Improving OOP Maintainability and Flexibility with SOLID Principles",
     description:

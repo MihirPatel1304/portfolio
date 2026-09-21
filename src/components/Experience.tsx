@@ -2,9 +2,29 @@ import { Briefcase } from 'lucide-react';
 
 const experienceData = [
   {
+  title: "Software Developer Intern",
+  company: "PM Communications, Ahmedabad, India",
+  duration: "May 2022 – Jul 2022",
+  responsibilities: [
+    "Designed and coded Python application features to extend existing software functionality.",
+    "Supported the team in delivering quality software through thorough testing and debugging.",
+    "Resolved Python and MySQL software defects while quickly learning the codebase."
+  ]
+  },
+  {
+  title: "Software Engineer (Part-time)",
+  company: "Mangalam Information Technologies Pvt Ltd, Ahmedabad, India",
+  duration: "Feb 2023 – Dec 2023",
+  responsibilities: [
+    "Developed and maintained Python and JavaScript applications, translating business requirements into technical solutions.",
+    "Contributed across the full software development lifecycle, managing MySQL databases for multiple projects.",
+    "Debugged and resolved issues in production applications, improving system performance and reliability."
+  ]
+  },
+  {
     title: "Software Engineering Intern",
     company: "Arth Infosoft Pvt Ltd, Ahmedabad, India",
-    duration: "2024",
+    duration: "Jan 2024 - Mar 2024",
     responsibilities: [
       "Developed HRConnect, a Django-based HR portal for leave management, attendance tracking, and event coordination.",
       "Designed features enabling HR administrators to approve leave requests, monitor attendance, and manage events efficiently.",
